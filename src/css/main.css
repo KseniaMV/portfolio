@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url('./about.css');
+@import url('.portfolio.css');
+@import url('./contacts.css');
+
+:root{
+    --main-bg-gradient: linear-gradient(90deg, rgba(6,0,4,1) 0%, rgba(94,0,67,1) 100%);
+    --main-white-bg: rgb(248,246,249);
+    --grey-layer: rgba(13,5,5,.45);
+    --white-text-color: rgb(255,253,253);
+    --dark-text-color: rgb(10,3,5);
+    --button-hover-color: rgb(53,3,36);
+    --shadow-button: 10px 10px 10px 0 rgba(18,3,11,.5);
+}
+
+*{
+   font-family: 'Montserrat', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
