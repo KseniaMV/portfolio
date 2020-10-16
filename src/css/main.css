@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
 @import url('./about.css');
-@import url('.portfolio.css');
+@import url('./portfolio.css');
 @import url('./contacts.css');
 
 :root{
@@ -10,7 +10,7 @@
     --white-text-color: rgb(255,253,253);
     --dark-text-color: rgb(10,3,5);
     --button-hover-color: rgb(53,3,36);
-    --shadow-button: 10px 10px 10px 0 rgba(18,3,11,.5);
+    --shadow-button: drop-shadow(10px 10px 10px rgba(18,3,11,.5));
 }
 
 *{
@@ -18,5 +18,132 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    background-image: var(--main-bg-gradient);
+}
+
+.section{
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    position: relative;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-around;
+}
+
+.title-conteiner{
+    width: 40%;
+    height: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.title-profession,
+.title-name{
+    width: 100%;
+    height: 50px;
+    font-size: 48px;
+    color: var(--white-text-color);
+    filter: var(--shadow-button);
+}
+
+.title-profession{
+    width: 650px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(-90deg) translate(-25px, 25px);
+    transform-origin: left;
+}
+
+.main-navigation{
+    width: 550px;
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.navigation-list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    list-style: none;
+
+}
+
+.navigation-item{
+    width: 64px;
+    height: 64px;
+    position: relative;
+    border-radius: 64px;
+    filter: var(--shadow-button);
+    transition: .3s ease;
+}
+
+.item--dark-theme{
+    background-color: var(--main-white-bg);
+}
+
+.item--dark-theme:hover{
+    border: 3px solid var(--main-white-bg);
+    background-color: var(--button-hover-color);
+    filter: none;
+}
+
+.item--dark-theme:hover .navigation-link{
+    transform: translateX(-550px);
+    opacity: 1;
+}
+.navigation-link{
+    width: auto;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    font-size: 64px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    filter: var(--shadow-button);
+    opacity: 0;
+    border: 1px solid white;
+    transition: 0.3s ease;
+}
+
+.link--dark-theme{
+    color: var(--white-text-color);
 }
 

@@ -19,7 +19,7 @@ const paths = {
       dest: "dist/src/js"
   },
   html: {
-    src: ["index.html, pages/*.html"],
+    src: ["index.html, src/pages/*.html"],
   }
 };
 
@@ -78,7 +78,7 @@ function reload() {
 
 function image() {
     return gulp
-      .src("src/assets/images/**/*.+(png|jpg|svg)")
+      .src("src/assets/images/**/*.+(png|jpg|svg), src/assets/icons/**/*.+(png|jpg|svg)")
       .pipe(
         imagemin()
       )
