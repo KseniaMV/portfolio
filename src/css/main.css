@@ -25,6 +25,7 @@ body{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    user-select: none;
 
 }
 
@@ -98,9 +99,10 @@ body{
     width: 550px;
     height: 500px;
     position: absolute;
-    bottom: 35px;
+    top: calc(50% - 250px);
     right: 20px;
     z-index: 10;
+    overflow: hidden;
 }
 
 .navigation-list{
@@ -118,11 +120,33 @@ body{
     width: 50px;
     height: 50px;
     margin: auto 0;
+    display: flex;
     position: relative;
     border-radius: 50px;
     filter: var(--shadow-button);
-    transition: .3s ease;
+    transition: .5s ease;
+    cursor: pointer;
 }
+
+.navigation-link{
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    font-size: 90%;
+    text-decoration: none;
+    letter-spacing: 1px;
+    filter: var(--shadow-button);
+    opacity: 0;
+    transition: 0.5s ease;
+    transform: translateX(200px);
+    z-index: 20;
+}
+
 
 .item--light-theme{
     background-color: var(--main-white-bg);
@@ -134,10 +158,14 @@ body{
     filter: none;
 }
 
-.item--light-theme:hover .navigation-link{
-    transform: translateX(-300px);
-    opacity: 1;
-    color: var(--white-text-color);
+.showLink--light-theme{
+    animation: showLinkLT 1s ease-in-out forwards;
+    animation-direction: normal;
+}
+
+.showLink--dark-theme{
+    animation: showLinkDT 1s ease-in-out forwards;
+    animation-direction: normal;
 }
 
 .item--dark-theme{
@@ -150,33 +178,35 @@ body{
     filter: none;
 }
 
-.item--dark-theme:hover .navigation-link{
-    transform: translateX(-300px);
-    opacity: 1;
-    color: var(--button-hover-color);
+@keyframes showLinkLT{
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(-300px);
+        opacity: 1;
+        color: var(--white-text-color);
+    }
+}
+
+@keyframes showLinkDT{
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(-300px);
+        opacity: 1;
+        color: var(--button-hover-color);
+    }
 }
 
 
-.navigation-link{
-    width: auto;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 90%;
-    text-decoration: none;
-    letter-spacing: 1px;
-    filter: var(--shadow-button);
-    opacity: 0;
-    border: 1px solid black;
-    transition: 0.3s ease;
-    transform: translateX(200px);
 
-}
+
+
+
 
 /*.link--light-theme{
     color: var(--white-text-color);

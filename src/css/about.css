@@ -60,11 +60,28 @@
     background-size: 40px;
     cursor: pointer;
 }
+
 .download-cv__text{
     width: 100%;
-    height: auto;
+    height: 60px;
     margin: auto;
     text-align: right;
-    font-size: 30%;
+
 }
+
+.download__link{
+    width: auto;
+    height: 50%;   
+    margin: auto; 
+    display: block;
+    font-size: 30%;
+    text-decoration: none;
+    color: var(--dark-text-color);
+    transform: translateY(50%);
+    cursor: pointer;
+
+}
+
+
+
 
