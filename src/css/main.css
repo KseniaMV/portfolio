@@ -100,9 +100,8 @@ body{
     height: 500px;
     position: absolute;
     top: calc(50% - 250px);
-    right: 20px;
+    left: 85%;
     z-index: 10;
-    overflow: hidden;
 }
 
 .navigation-list{
@@ -113,52 +112,61 @@ body{
     justify-content: space-between;
     align-items: flex-end;
     list-style: none;
-
 }
 
 .navigation-item{
-    width: 50px;
+    width: 100%;
     height: 50px;
     margin: auto 0;
     display: flex;
-    position: relative;
-    border-radius: 50px;
-    filter: var(--shadow-button);
-    transition: .5s ease;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     cursor: pointer;
+}
+
+.navigation-circle{
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 50px;
+    transition: 0.5s ease;
+    z-index: 5;
 }
 
 .navigation-link{
     width: 300px;
     height: 100%;
-    position: absolute;
-    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
     font-size: 90%;
     text-decoration: none;
     letter-spacing: 1px;
     filter: var(--shadow-button);
     opacity: 0;
     transition: 0.5s ease;
-    transform: translateX(200px);
+    transform: translateX(100px);
     z-index: 20;
+    color: var(--main-white-bg);
 }
 
+.navigation-link:hover{
+    filter: invert();
+}
 
-.item--light-theme{
+.circle--light-theme{
     background-color: var(--main-white-bg);
 }
 
-.item--light-theme:hover{
+.circle--light-theme:hover{
     border: 3px solid var(--main-white-bg);
     background-color: var(--button-hover-color);
     filter: none;
 }
 
-.showLink--light-theme{
+.show-link{
     animation: showLinkLT 1s ease-in-out forwards;
     animation-direction: normal;
 }
@@ -168,11 +176,15 @@ body{
     animation-direction: normal;
 }
 
-.item--dark-theme{
+.hide-link{
+    animation: hideLink 1s ease-in-out forwards;
+}
+
+.circle--darc-theme{
     background-color: var(--button-hover-color);
 }
 
-.item--dark-theme:hover{
+.circle--darc-theme:hover{
     border: 3px solid var(--button-hover-color);
     background-color: var(--main-white-bg);
     filter: none;
@@ -184,7 +196,7 @@ body{
         opacity: 0;
     }
     100%{
-        transform: translateX(-300px);
+        transform: translateX(-350px);
         opacity: 1;
         color: var(--white-text-color);
     }
@@ -200,6 +212,18 @@ body{
         opacity: 1;
         color: var(--button-hover-color);
     }
+}
+
+@keyframes hideLink{
+    0%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    
 }
 
 
